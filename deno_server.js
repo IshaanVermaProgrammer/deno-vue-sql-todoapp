@@ -28,7 +28,7 @@ router.post("/update-todo", async (context) => {
                               await client.execute("UPDATE `todos` SET text=?  WHERE id=?", [text,id]).catch(err=>console.error(err));
                               context.response.body=`Updated ID ${id}`;
 	});
-app.use(oakCors({origin:"http://localhost:8080"}));
+app.use(oakCors({origin:"http://localhost"}));
 app.use(router.routes());
 app.use(router.allowedMethods());
 console.log(port);
