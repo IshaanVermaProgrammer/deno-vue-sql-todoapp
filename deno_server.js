@@ -2,7 +2,7 @@ import { Application, Router } from "https://deno.land/x/oak/mod.ts";
 import { oakCors } from "https://deno.land/x/cors/mod.ts";
 const router = new Router();
 const app = new Application();
-let port=80;
+let port=5000;
 import { Client } from "https://deno.land/x/mysql/mod.ts";
 const client = await new Client().connect({
   hostname: "127.0.0.1",
