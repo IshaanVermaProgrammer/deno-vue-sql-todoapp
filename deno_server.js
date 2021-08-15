@@ -2,6 +2,7 @@ import { Application, Router } from "https://deno.land/x/oak/mod.ts";
 import { oakCors } from "https://deno.land/x/cors/mod.ts";
 const router = new Router();
 const app = new Application();
+let port=80;
 import { Client } from "https://deno.land/x/mysql/mod.ts";
 const client = await new Client().connect({
   hostname: "127.0.0.1",
@@ -30,5 +31,5 @@ router.post("/update-todo", async (context) => {
 app.use(oakCors({origin:"http://localhost:8080"}));
 app.use(router.routes());
 app.use(router.allowedMethods());
-console.log(config.web.port);
-await app.listen({ port: config.web.port });
+console.log(port);
+await app.listen({ port: port });
